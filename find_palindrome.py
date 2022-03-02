@@ -20,3 +20,13 @@ def is_palindrome(my_string):
     return chars_match
 
 print(is_palindrome("Go hang a salami - I'm a lasagna hog."))
+
+#Solution two
+import re
+
+def is_palindrome_two(my_string):
+    joined_string = ''.join(re.findall(r'[a-z]+', my_string.lower()))
+    reversed_string = joined_string[::-1]
+    return joined_string == reversed_string
+
+print(is_palindrome_two("Go hang a salami - I'm a lasagna hog."))
